@@ -1,0 +1,160 @@
+/* Styling chatting sidebar(left side) */
+
+.chat-app {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  height: 500px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: auto;
+
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  outline: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.search-bar button {
+  background: #00bcd4;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-bar button i {
+  font-size: 16px;
+  
+}
+
+
+.user-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  height: 300px;
+  cursor: pointer;
+}
+.profile{
+  width: 30px;
+  padding-right: 10px;
+}
+
+.user-card {
+
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: background 0.2s;
+}
+
+.user-card:hover {
+  background: hsl(187, 84%, 69%);
+}
+
+.user-card i {
+  font-size: 24px;
+  margin-right: 10px;
+  color: #00bcd4;
+}
+
+
+
+/* Styling app bottom icons */
+
+.bottombar-icons i{
+  margin-top: 25px;
+  margin-left: 35px;
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.fa-right-from-bracket{
+  color: #00bcd4;
+}
+.fa-right-from-bracket:hover{
+  color: #79dcea;
+  transform: scale(1.2);
+}
+
+
+.fa-trash{
+  color: #00bcd4;
+}
+.fa-trash:hover{
+  color: #79dcea;
+  transform: scale(1.2);
+}
+
+.fa-circle-question{
+  color: #00bcd4;
+}
+.fa-circle-question:hover{
+  color: #79dcea;
+  transform: scale(1.2);
+}
+
+.fa-user-group{
+  color: #00bcd4;
+}
+.fa-user-group:hover{
+  color: #79dcea;
+  transform: scale(1.2);
+}
+
+
+/* Responsive design for mobile */
+
+@media(max-width:600px){
+  .chat-app {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    height: 380px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: auto;
+  }
+
+  
+.user-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  height: 200px;
+  cursor: pointer;
+}
+
+.bottombar-icons i{
+  margin-top: auto;
+  margin-bottom: -10px;
+ 
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+  
+}

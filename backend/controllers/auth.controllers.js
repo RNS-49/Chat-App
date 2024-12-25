@@ -10,10 +10,10 @@ export const signup = async (req,res)=>{
       return res.status(400).json({error:"Password's does'nt match!"})
     }
 
-    const user = await User.findOne({username});                                // checking whether the username unique or not
+    const user = await User.findOne({username});                                // checking whether the username exists in the datbase or not
 
     if(user){
-      return res.status(400).json({error:"Username already exists"})
+      return res.status(409).json({error:"Username already exists"})
     }
 
     //using bcrypt to hash password
@@ -60,10 +60,10 @@ export const signup = async (req,res)=>{
 export const login = async (req,res)=>{
   try {
     const {username,password} = req.body;
-    const user = await User.findOne({username});
+    const user = await User.findOne({username});          //checking username exixts in the databse or not when login
     const isPasswordCorrect = await bcrypt.compare(password, user?.password || "");
 
-    if(!user || !isPasswordCorrect){
+    if(!user || !isPasswordCorrect){                      // checking whether the user entered password exists in the database or not
       return res.status(400).json({error: "Invalid username or password"});
     }
 
@@ -90,5 +90,21 @@ export const logout = (req,res)=>{
   } catch (error) {
     console.log("Error in logout controller",error.message);
     res.status(500).json({error:"internal server error"});
+  }
+}
+
+export const drop = async (req,res)=>{
+  try {
+    const userId = req.user._id;      // getting user id from tokens
+    const deleteUser = await User.findByIdAndDelete(userId);         // finding and deleting the user using the userId
+    
+    if(!deleteUser){
+      return res.status(404).json({message:'user not found'})
+    }
+
+    res.status(200).json({message:'Account deleted successfully'})
+  } catch (error) {
+    console.error('error deleting account:', error.message);
+    res.status(500).json({message:'internal server error'});
   }
 }

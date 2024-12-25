@@ -1,0 +1,20 @@
+/* Styling main homepage*/
+
+.home-page{
+  display: flex;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+@media(max-width:600px){
+  .home-page{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display:block;
+  }
+}
