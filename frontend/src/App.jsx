@@ -5,7 +5,7 @@ import Signup from './pages/signup/Signup'
 import Home from './pages/home/Home'
 import Intro from './components/Intro'
 import {Toaster} from 'react-hot-toast'
-import Informations from './pages/informations/informations'
+import Informations from './pages/informations/Informations'
 
 function App() {
 
