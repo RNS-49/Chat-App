@@ -21,7 +21,7 @@ function Sidebar({setSelectedUser}) {  //   setSelectedUser from home component
       try {
        
         axios.defaults.withCredentials = true;
-        const response =await axios.get("http://localhost:5000/api/users");
+        const response =await axios.get("https://chat-app-rosy-six.vercel.app/api/users");
          console.log(response)
          getUsers(response.data)  // react does,nt immediatly update the state using setState.instead, it schedules the update
          console.log(users)
@@ -58,7 +58,7 @@ function Sidebar({setSelectedUser}) {  //   setSelectedUser from home component
 
    const handleAccountDeletion = async()=>{
     try {
-      const response =await axios.delete('http://localhost:5000/api/auth/drop');
+      const response =await axios.delete('https://chat-app-rosy-six.vercel.app/api/auth/drop');
      
       console.log(response)
       if(response.status === 200){
