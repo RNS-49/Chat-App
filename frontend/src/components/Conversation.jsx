@@ -15,7 +15,7 @@ function Conversation({ selectedUser }) {
       const receiver = selectedUser._id;
       try {
         axios.defaults.withCredentials = true;
-        const response = await axios.get(`http://localhost:5000/api/message/${receiver}`);
+        const response = await axios.get(`https://chat-app-kw4y.onrender.com/api/message/${receiver}`);
         setGetMessage(response.data);
       } catch (error) {
         console.error("Error getting message:", error);
@@ -32,7 +32,7 @@ function Conversation({ selectedUser }) {
 
     try {
       axios.defaults.withCredentials = true;
-      const response = await axios.post(`http://localhost:5000/api/message/send/${receiver}`, { message });
+      const response = await axios.post(`https://chat-app-kw4y.onrender.com/api/message/send/${receiver}`, { message });
       setViewMessage((prevMessages) => [...prevMessages, response.data]);
       setSendMessage('');
     } catch (error) {
