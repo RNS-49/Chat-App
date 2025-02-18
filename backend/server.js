@@ -34,7 +34,6 @@ app.use("/api/auth",authRoutes);    // middleware setup for authentication
 app.use("/api/message",messageRoutes);    // middleware setup messaging
 app.use("/api/users",userRoutes);    // middleware setup for users list
 
-app.use(express.static(path.join(__dirname,"/frontend/dist")))
 
 
 app.listen(5000,()=>{ 
