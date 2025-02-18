@@ -36,7 +36,7 @@ function Login() {
 
 
     try {
-      const response = await axios.post('https://chat-app-rosy-six.vercel.app/api/auth/login',loginInput);
+      const response = await axios.post('https://chat-app-kw4y.onrender.com/api/auth/login',loginInput);
       console.log(response);
      
       if(response.status === 201){
