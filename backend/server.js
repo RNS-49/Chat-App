@@ -12,7 +12,7 @@ import connectToMongoDB from "./db/connectToMongoDB.js";
 const app=express();
 
 app.use(cors({
-  origin:'http://localhost:5173',
+  origin:'https://chat-app-rosy-six.vercel.app/',
   credentials:true,
 }));
 
