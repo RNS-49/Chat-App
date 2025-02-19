@@ -9,20 +9,18 @@ import userRoutes from "./routes/user.routes.js"
 
 import connectToMongoDB from "./db/connectToMongoDB.js";
 
+dotenv.config();
+
 const app=express();
 
 app.use(cors({
   origin:'https://chat-app-rosy-six.vercel.app',
+  methods:["GET","POST","PUT","DELETE","OPTIONS"],
+  allowedHeaders:["Content-Type","Authorization"]
   credentials:true,
 }));
 
 const PORT = process.env.PORT || 5000;
-
-
-
-
-
-dotenv.config();
 
 
 
