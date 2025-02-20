@@ -14,8 +14,7 @@ function Conversation({ selectedUser }) {
     const handleGetMessage = async () => {
       const receiver = selectedUser._id;
       try {
-        axios.defaults.withCredentials = true;
-        const response = await axios.get(`https://chat-app-kw4y.onrender.com/api/message/${receiver}`);
+        const response = await axios.get(`https://chat-app-kw4y.onrender.com/api/message/${receiver}`,{withCredentials:true});
         setGetMessage(response.data);
       } catch (error) {
         console.error("Error getting message:", error);
@@ -31,8 +30,9 @@ function Conversation({ selectedUser }) {
     const receiver = selectedUser._id;
 
     try {
-      axios.defaults.withCredentials = true;
-      const response = await axios.post(`https://chat-app-kw4y.onrender.com/api/message/send/${receiver}`, { message });
+      const response = await axios.post(`https://chat-app-kw4y.onrender.com/api/message/send/${receiver}`,
+      { message },
+      { withCredentials: true });
       setViewMessage((prevMessages) => [...prevMessages, response.data]);
       setSendMessage('');
     } catch (error) {
