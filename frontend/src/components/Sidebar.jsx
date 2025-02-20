@@ -20,8 +20,7 @@ function Sidebar({setSelectedUser}) {  //   setSelectedUser from home component
     const fetchUser = async()=>{
       try {
        
-        axios.defaults.withCredentials = true;
-        const response =await axios.get("https://chat-app-kw4y.onrender.com/api/users");
+        const response =await axios.get("https://chat-app-kw4y.onrender.com/api/users",{withCredentials:true});
          console.log(response)
          getUsers(response.data)  // react does,nt immediatly update the state using setState.instead, it schedules the update
          console.log(users)
