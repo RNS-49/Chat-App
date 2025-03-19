@@ -13,10 +13,14 @@ dotenv.config();
 
 const app=express();
 
-app.use(cors({
-  origin:'https://chat-app-rosy-six.vercel.app',
-  credentials:true
-}));
+app.use(
+  cors({
+    origin: "https://chat-app-rosy-six.vercel.app", // ✅ Specify the frontend URL
+    credentials: true, // ✅ Allow cookies/sessions
+    methods: "GET,POST,PUT,DELETE", // Optional: Restrict allowed methods
+    allowedHeaders: "Content-Type,Authorization", // Optional: Allow specific headers
+  })
+);
 
 const PORT = process.env.PORT || 5000;
 
