@@ -36,7 +36,9 @@ function Login() {
 
 
     try {
-      const response = await axios.post('https://chat-app-kw4y.onrender.com/api/auth/login',loginInput);
+      const response = await axios.post('https://chat-app-kw4y.onrender.com/api/auth/login',loginInput,{
+        withCredentials: true
+      });
       console.log(response);
      
       if(response.status === 201){
