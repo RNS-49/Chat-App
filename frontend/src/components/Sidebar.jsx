@@ -57,7 +57,7 @@ function Sidebar({setSelectedUser}) {  //   setSelectedUser from home component
 
    const handleAccountDeletion = async()=>{
     try {
-      const response =await axios.delete('https://chat-app-kw4y.onrender.com/api/auth/drop');
+      const response =await axios.delete('https://chat-app-kw4y.onrender.com/api/auth/drop',{withCredentials: true});
      
       console.log(response)
       if(response.status === 200){
