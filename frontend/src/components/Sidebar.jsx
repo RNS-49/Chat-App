@@ -63,6 +63,8 @@ function Sidebar({setSelectedUser}) {  //   setSelectedUser from home component
       if(response.status === 200){
         toast.success("Account Deleted");
         getUsers([]);
+        localStorage.removeItem('user');
+        window.dispatchEvent(new Event('authChange'));
         navigate("/login");
       }else{
         toast.error("Network Error")
