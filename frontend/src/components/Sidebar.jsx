@@ -27,7 +27,7 @@ function Sidebar({setSelectedUser}) {  //   setSelectedUser from home component
        } catch (error) {
     
        toast.error("Network Error");
-      console.error("error fetching users data:",error);
+      console.error("error fetching users data:",error.response?.data || error.message);
       }
     }
     fetchUser();
