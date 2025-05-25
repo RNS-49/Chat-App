@@ -43,7 +43,9 @@ function Signup() {
     }
 
     try {
-      const response = await axios.post('https://chat-app-kw4y.onrender.com/api/auth/signup',inputs);   // sending post request to the signup route using axios
+      const response = await axios.post('https://chat-app-kw4y.onrender.com/api/auth/signup',inputs,{
+        withCredentials:true
+      });   // sending post request to the signup route using axios
       console.log(response);
 
       if(response.status === 201){
